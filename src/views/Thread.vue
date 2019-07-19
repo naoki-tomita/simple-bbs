@@ -7,6 +7,7 @@ div
         .name {{ content.contributor }}
       .content {{ content.content }}
   div
+    | お名前: &nbsp;
     input(v-model="name", placeholder="name")
   div
     textarea(v-model="content")
@@ -72,16 +73,30 @@ li {
   padding: 0;
   list-style: none;
 }
-.head {
-  display: flex;
+.contents {
+  margin-bottom: 12px;
 
-  .index {
-    &::after {
-      content: ":";
+  .head {
+    display: flex;
+
+    .index {
+      &::after {
+        content: ":";
+      }
+    }
+    .name {
+      padding-left: 12px;
     }
   }
-  .name {
-    padding-left: 12px;
-  }
+}
+
+input {
+  width: 200px;
+  margin-bottom: 8px;
+}
+
+textarea {
+  width: 420px;
+  height: 140px;
 }
 </style>
